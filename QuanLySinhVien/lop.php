@@ -14,6 +14,7 @@ require_once 'header.php' ?>
             $i = 0;
             while ($row = mysqli_fetch_assoc($result)) {
                 $i++;
+                $malop = $row["id"];
                 $tenlop = $row["TenLop"];
         ?>
                 <?php
@@ -21,7 +22,7 @@ require_once 'header.php' ?>
                         <td>$i</td>
                         <td>$tenlop</td>"; ?>
                 <td><button type="button" class="btn btn-warning">Sửa</button></td>
-                <td><button type="button" class="btn btn-danger">Xóa</button></td>
+                <td><button type="button" class="btn btn-danger" name="xoa">Xóa</button></td>
         <?php
                 echo "</tr>";
             }
@@ -49,6 +50,13 @@ require_once 'header.php' ?>
         $tenLop = $_POST["tenLop"];
         $query = "INSERT INTO lop(TenLop) VALUES('$tenLop')";
         mysqli_query($conn, $query) or die("Thêm không thành công!!!");
+        header('Location:lop.php'); // reload
+    }
+    // xoa
+    if (isset($_POST['xoa'])) {
+
+        $query = "DELETE FROM lop WHERE id = $malop";
+        mysqli_query($conn, $query) or die("Xóa không thành công!!!");
         header('Location:lop.php'); // reload
     }
     //require_once './right.php';

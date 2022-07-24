@@ -1,9 +1,8 @@
 <?php
 require_once 'header.php' ?>
-<h1>Nội dung:</h1>
 <div class="container">
     <h2>Thông tin sinh viên</h2>
-    <table width="100%">
+    <table width="100%" class="table table-dark table-hover">
         <tr>
             <th>STT</th>
             <th>Họ và tên</th>
@@ -29,8 +28,16 @@ require_once 'header.php' ?>
         }
         ?>
     </table>
+
+    <?php require_once './right.php'; ?>
+    <?php require_once './footer.php' ?>
+    <hr />
+    <div class="card" style="width:400px">
+        <img class="card-img-top" src="./images/Huy.jpg" alt="Card image" style="width:100%">
+        <div class="card-body">
+            <h4 class="card-title">Đoàn Quang Huy</h4>
+            <p class="card-text">Sinh viên K44 Trường Đại học Đà Lạt.</p>
+            <a href="https://github.com/quanghuybest2k2/" class="btn btn-primary">Github</a>
+        </div>
+    </div>
 </div>
-<?php
-require_once './right.php';
-require_once './footer.php'
-?>

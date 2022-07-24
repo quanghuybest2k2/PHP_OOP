@@ -1,7 +1,9 @@
 <?php
+
 /**
  * Dùng tử khóa use để gọi trait
  */
+
 namespace controllers;
 
 trait HelloWorld
@@ -26,7 +28,6 @@ trait Tokuda
 class Welcome
 {
     use HelloWorld;
-
 }
 class AgeTokuda
 {
