@@ -2,7 +2,7 @@
 require_once 'header.php' ?>
 <h1>Nội dung:</h1>
 <div>
-    <table width="100%">
+    <table width="100%" class="table table-dark table-hover table-sm">
         <tr>
             <th>STT</th>
             <th>Lớp</th>
@@ -31,20 +31,14 @@ require_once 'header.php' ?>
         }  ?>
     </table>
     <hr>
-    <form method="post">
-        <table>
-            <tr>
-                <td>Tên lớp:</td>
-                <td><input type="text" name="tenLop" /></td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="submit" value="Thêm lớp" name="themLop">
-                </td>
-            </tr>
-        </table>
+    <form method="POST">
+        <div class="form-group">
+            <label>Tên lớp:</label>
+            <input type="text" class="form-control" name="tenLop">
+        </div>
+        <button type="submit" class="btn btn-primary" name="themLop">Thêm lớp</button>
+        <button class="btn btn-dark" onclick="history.go(-1);">Trở về</button>
     </form>
-    <button onclick="history.go(-1);">Trở về</button>
     <?php
     if (isset($_POST['themLop'])) {
         $tenLop = $_POST["tenLop"];
