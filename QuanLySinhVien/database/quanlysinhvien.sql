@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 19, 2022 lúc 10:03 AM
+-- Thời gian đã tạo: Th9 06, 2022 lúc 09:50 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -44,7 +44,8 @@ INSERT INTO `lop` (`id`, `TenLop`) VALUES
 (5, 'CTK44A'),
 (6, 'CTK44B'),
 (7, 'CTK45A'),
-(8, 'CTK45B');
+(8, 'CTK45B'),
+(9, 'CTK44-PM');
 
 -- --------------------------------------------------------
 
@@ -92,7 +93,7 @@ ALTER TABLE `sinhvien`
 -- AUTO_INCREMENT cho bảng `lop`
 --
 ALTER TABLE `lop`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `sinhvien`
