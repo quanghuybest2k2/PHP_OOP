@@ -3,6 +3,7 @@
 - Dùng từ khóa $this->không có dấu $ cho biến vd:$this->HoTen;
 - Gọi Constant dùng dấu :: vd: DienVien::Title;
  */
+
 namespace controllers;
 
 class DienVien
@@ -24,7 +25,6 @@ class DienVien
         $this->ChieuCao = $chieucao;
         $this->CanNang = $cannang;
         $this->QuocTich = $quoctich;
-
     }
     ///tra ve gia tri
     public function GetName()
@@ -50,6 +50,10 @@ class DienVien
     public function GetNationality()
     {
         return $this->QuocTich;
+    }
+    public function SetName(string $name)
+    {
+        return $this->HoTen = $name;
     }
 }
 
