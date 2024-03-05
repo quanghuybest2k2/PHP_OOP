@@ -8,28 +8,47 @@ use App\ProductManager;
 
 $productManager = new ProductManager();
 
-// Thêm sp
-$productManager->addProduct(new Product(1, 'iPhone', 1000));
-$productManager->addProduct(new Product(2, 'Samsung Galaxy', 900));
+$productList = [
+    [
+        'name' => 'Iphone',
+        'price' => 20000000
+    ],
+    [
+        'name' => 'Samsung Galaxy',
+        'price' => 12000000
+    ],
+    [
+        'name' => 'Vivo Y20s',
+        'price' => 15000000
+    ]
+];
 
-// Lấy danh sách sản phẩm
-$products = $productManager->getProducts();
-echo "Danh sách sản phẩm:<br>";
-foreach ($products as $product) {
-    echo $product->getName() . ' - $' . $product->getPrice() . "<br>";
+
+// Thêm sp test
+// $productManager->addProduct(new Product(1, 'IPhone', 20000000));
+// $productManager->addProduct(new Product(2, 'Samsung Galaxy', 12000000));
+
+// Thêm sp
+$index = 1;
+foreach ($productList as $item) {
+    $productManager->addProduct(new Product($index, $item['name'], $item['price']));
+    // print($id);
+    $index++;
 }
 
+// Lấy danh sách sản phẩm
+echo "Danh sách sản phẩm:<br>";
+$products = $productManager->getProducts();
 // Lấy sp theo id
-$product = $productManager->getProductById(1);
+$id = 2;
+$product = $productManager->getProductById($id);
 if ($product) {
-    echo "<br>Sản phẩm với ID 1: " . $product->getName();
+    echo "<br/>Sản phẩm với Id $id: " . $product->getName();
 } else {
-    echo "<br>Không tìm thấy sản phẩm";
+    echo "<br/>Không tìm thấy sản phẩm";
 }
 
 // Xóa sp
 $productManager->deleteProduct(2);
 echo "<br><br>Sản phẩm sau khi xóa:<br>";
-foreach ($productManager->getProducts() as $product) {
-    echo $product->getName() . ' - $' . $product->getPrice() . "<br>";
-}
+$products = $productManager->getProducts();

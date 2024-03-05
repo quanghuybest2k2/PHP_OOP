@@ -23,11 +23,13 @@ class ProductManager
     /**
      * Get all products managed by the manager.
      *
-     * @return array An array of Product objects.
+     * @return void get product list.
      */
-    public function getProducts(): array
+    public function getProducts(): void
     {
-        return $this->products;
+        foreach ($this->products as $product) {
+            echo "Id => " . $product->getId() . "<br/>" . $product->getName() . ' - $' . $product->getPrice() . "<br/>";
+        }
     }
 
     /**
